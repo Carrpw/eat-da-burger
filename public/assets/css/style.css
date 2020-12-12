@@ -21,3 +21,8 @@ li {
 .background {
   background-color: rgb(255, 196, 87);
 }
+
+#image {
+  height: 20%;
+  width: 20%;
+}

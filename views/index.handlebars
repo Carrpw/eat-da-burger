@@ -21,7 +21,14 @@
       <ul>
         {{#each burgers}}
           {{#if tried}}
-            {{> burgers/burger-block eaten=false}}
+            <div class="row">
+              <div class="col-md-6">
+                <span>{{id}}.{{name}}</span>
+              </div>
+              <div class="col-md-6">
+                Sorry, only one per customer.
+              </div>
+            </div>
           {{/if}}
         {{/each}}
       </ul>
@@ -29,18 +36,18 @@
 </div>
 
 <div class="row col-md-12 text-center">
-  <h2>Add a type of Burger.</h2>
   <form class="create-form">
 
     <div class="form-group">
       <label for="bur">Burger Name:</label>
       <input type="text" id="bur" name="name">
-      <input type="radio" name="tried" value="0"> Looks Tasty
     </div>
     <button class="btn btn-primary" type="submit">Submit</button>
 
     <div class="form-group">
       <label for="tried">Enter a burger you want to eat, then click the "Submit" button.</label><br>
+      <input type="radio" name="tried" value="1"><br>
+      <input type="radio" name="tried" value="0" checked>Devour
     </div>
 
   </form>

@@ -1,0 +1,38 @@
+<h1>Eat-Da-Burger!</h1>
+
+<h2>Burgers you have not yet tried!</h2>
+
+<ul>
+  {{#each burgers}}
+    {{#unless tried}}
+      {{> burgers/burger-block eaten=true}}
+    {{/unless}}
+  {{/each}}
+</ul>
+
+<h2>Burgers you've already tried!</h2>
+
+<ul>
+  {{#each burgers}}
+    {{#if tried}}
+      {{> burgers/burger-block eaten=false}}
+    {{/if}}
+  {{/each}}
+</ul>
+
+<h2>Add a type of Burger.</h2>
+<form class="create-form">
+
+  <div class="form-group">
+    <label for="bur">Burger Name:</label>
+    <input type="text" id="bur" name="name">
+  </div>
+
+  <div class="form-group">
+    <label for="tried">Eat</label><br>
+    <input type="radio" name="tried" value="1" checked> Tried!<br>
+    <input type="radio" name="tried" value="0"> Looks Tasty
+  </div>
+
+  <button type="submit">Add Burger Type</button>
+</form>
